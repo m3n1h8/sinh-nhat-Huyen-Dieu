@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Poppins:wght@300;500;700&family=Roboto:wght@300;400;700&family=Satisfy&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <title>HAPPY BITHDAY DIỆU</title>
+  <style>
+   :root {
+      --main-color: #fcd5ce;
+      --accent-color: #ff6b6b;
+      --font-color: #333;
+      --bg-color: #fff0f5;
+      --font-title: 'Pacifico', cursive;
+      --font-body: 'Poppins', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: linear-gradient(135deg, #fef6f9, #fffdf0);
+      color: var(--font-color);
+      overflow-x: hidden;
+    }
+
+    nav {
+      background: #ffffffaa;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
+
+    .logo ion-icon {
+      font-size: 40px;
+      color: var(--accent-color);
+      text-shadow: 2px 2px 5px rgba(255, 107, 107, 0.5);
+    }
+
+  
+
+    .container {
+      padding-top: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2em;
+    }
+  
+
+
+
+
+
+
+
+
+
+
+
+.countdown{
+  width: 100%;
+}
+.time{
+    top: 2.38%;
+    right: 0;
+    background-color: #FFF8E1;
+    height: 95.24%;
+    width: 50%;
+    max-width: 385px;
+}
+
+#cake{
+   position: relative;
+    top: 0;
+    width: 100%;
+    border: solid 2px gray;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .page1, .page2, .page3, .page4 ,.page5, .page6a ,.page6b,.page6c,.page6d ,.page7 {
+      width: 90%;
+      max-width: 700px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+      padding: 2em;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 1s ease;
+    }
+    .page2, .page3, .page4 ,.page5, .page6a,.page6b ,.page6c,.page6d ,.page7 {
+     display: none;
+    }
+
+    .page1 h1, h1 {
+      font-family: var(--font-title);
+      color: var(--accent-color);
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    p.content {
+      text-align: center;
+      font-size: 1.1em;
+      color: #555;
+      font-family: var(--font-body);
+      margin-bottom: 1em;
+    }
+
+    .page1 .start {
+      display: block;
+      margin: 0 auto 1em auto;
+      padding: 0.5em 2em;
+      font-size: 1em;
+      border: none;
+      background: var(--accent-color);
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .page1 .start:hover {
+      background: #e65555;
+    }
+
+    .back-btn{
+      
+      margin: 1em auto 1em auto;
+      padding: 0.5em 2em;
+      font-size: 1em;
+      border: none;
+      border: solid 2px var(--accent-color);
+      color: var(--accent-color);
+      background-color: transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+
+    }
+   .next-btn{
+      
+      margin: 1em auto 1em auto;
+      padding: 0.5em 3em;
+      font-size: 1em;
+      border: solid 2px var(--accent-color);
+      background: var(--accent-color);
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+
+    }
+    .next-btn:hover{
+      background: #e65555;
+    }
+    /*
+    .journeys{
+      
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100% ;
+      
+    }
+    .journey{
+      width: 23%;
+      border-radius: 6px;
+      overflow: hidden;
+      border:solid 2px var(--main-color);
+      padding: 0.3em;
+
+    }*/
+    .journeys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+}
+
+.journey {
+  width: 45%;
+  max-width: 140px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid var(--main-color);
+  padding: 0.5em;
+  text-align: center;
+  transition: var(--transition);
+  background-color: #fff;
+}
+    .journey:hover{
+      background-color:var(--accent-color);
+      border:solid 2px var(--accent-color);
+      
+
+    }
+    .gif-qua{
+      width:100%;
+      aspect-ratio: 1;
+      border-radius: 2px;
+
+      
+    }
+
+
+    .quas{
+      display: grid ;
+      grid-template-rows: repeat(4/1fr);
+      gap: 1em
+    }
+    .qua{
+      display: block;
+      border: solid 2px var(--main-color);
+      text-align: center;
+      border-radius: 6px;
+      font-size: 1.1em;
+      padding: 0.5em;
+
+    }
+    .qua:hover{
+      background-color:var(--accent-color);
+      border:solid 2px var(--accent-color);
+      color: white
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page1 {
+        padding: 1em;
+      }
+      .nav-btns button {
+        font-size: 20px;
+      }
+    }*/
+    /* CSS TÁI CẤU TRÚC VỚI CẢI TIẾN VỀ GIAO DIỆN VÀ TÍNH HÀI HÒA 
+:root {
+  --main-color: #fcd5ce;
+  --accent-color: #ff6b6b;
+  --font-color: #333;
+  --bg-color: #fff0f5;
+  --font-title: 'Pacifico', cursive;
+  --font-body: 'Poppins', sans-serif;
+  --card-bg: #ffffff;
+  --card-radius: 12px;
+  --card-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(135deg, #fef6f9, #fffdf0);
+  color: var(--font-color);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+nav {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.logo ion-icon {
+  font-size: 40px;
+  color: var(--accent-color);
+  text-shadow: 2px 2px 4px rgba(255, 107, 107, 0.4);
+}
+
+.container {
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+
+.page1, .page2, .page3, .page4, .page5,
+.page6a, .page6b, .page6c, .page6d, .page7 {
+  width: 90%;
+  max-width: 720px;
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 2em;
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.page1 {
+  display: block;
+}
+
+.page1 h1, h1 {
+  font-family: var(--font-title);
+  color: var(--accent-color);
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+p.content {
+  text-align: center;
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 1.5em;
+}
+
+.start, .back-btn, .next-btn {
+  padding: 0.6em 2em;
+  font-size: 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.start {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+}
+
+.start:hover {
+  background: #e65555;
+}
+
+.back-btn {
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+.back-btn:hover {
+  background: var(--accent-color);
+  color: white;
+}
+
+.next-btn {
+  background: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  color: white;
+}
+
+.next-btn:hover {
+  background: #e65555;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 1.5em;
+}
+
+.journeys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+}
+
+.journey {
+  width: 45%;
+  max-width: 150px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid var(--main-color);
+  padding: 0.5em;
+  text-align: center;
+  transition: var(--transition);
+  background-color: #fff;
+}
+
+.journey:hover {
+  background-color: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+.gif-qua {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.quas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.qua {
+  border: 2px solid var(--main-color);
+  padding: 1em;
+  text-align: center;
+  font-size: 1.1em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+  background-color: #fff;
+}
+
+.qua:hover {
+  background-color: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+input[type="number"],
+input[type="date"] {
+  width: 100%;
+  font-size: 1.2em;
+  padding: 0.5em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 0.5em;
+}
+
+img, video {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .journeys {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .journey {
+    width: 90%;
+  }
+
+  .quas {
+    grid-template-columns: 1fr;
+  }
+}
+*/
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <ion-icon name="mail-outline"></ion-icon>
+      </div>
+    </nav>
+
+    <div class="page1">
+      <h1>Chúc Mừng Sinh Nhật Huyền Diệu<h1>
+      <p class="content">đây là khảo sát quà tặng của tôi</p>
+      <button class="start" onclick="next(1)">Bắt đầu</button>
+      
+    </div>
+
+    <div class="page2" >
+      <h1>hãy chắc bạn là Huyền Diệu</h1>
+      <p class="content">năm nay bạn bao nhiêu tuổi</p>
+      <input type="number" style="width: 100%;font-size: 2em;color: var(--accent-color);border-radius: 6px;" id="page2-qes">
+      <div class="buttons" style="text-align: center;">
+        <button class="back-btn"onclick="back(2)">quay lại</button>
+        <button class="next-btn" onclick="next(2)">tiếp</button>
+      </div>
+    </div>
+    
+    <div class="page3">
+      <h1> HaHa đúng Huyền Diệu rồi. Chúc một ngày sinh nhật ý nghĩa</h1>
+      <P> Hãy tận hưởng nha </P>
+      <div class="buttons" style="text-align: center;">
+        <button class="back-btn"onclick="back(3)">quay lại</button>
+        <button class="next-btn" onclick="next(3)">tiếp</button>
+      </div>
+    </div>
+    
+    <div class="page4">
+      <h1>4 hành trình cảm xúc cho bạn chọn</h1>
+      <div class="journeys">
+        <span class="journey" onclick="next('6a')"><img src="gifbatngo.gif" alt="đang tải" class="gif-qua">
+          bất ngờ</span>
+        <span class="journey" onclick="next('6b')"><img src="gifvuive.gif" alt="" class="gif-qua">vui vẻ</span>
+        <span class="journey" onclick="next('6c')"><img src="gifmaccuoi.gif" alt="" class="gif-qua">mắc cười</span>
+        <span class="journey" onclick="next(5)"><img src="gifqua.gif" alt="" class="gif-qua">chọn quà</span>
+      </div>
+    </div>
+
+    
+
+    <div class="page6a">
+      <h1>Nhà ma đây!! </h1>
+      <p>nhấn vào ghế để thấy nó di chyển</p>
+      <img src="Screenshot 2025-07-11 165616.png" alt="" onclick="doaMa()" id="anh-ma"  style="width: 100%">
+      <div class="buttons" style="text-align: center;">
+        <button class="back-btn" onclick="back(4)">quay lại</button>
+      </div>
+    </div> 
+
+    <div class="page6b">
+      <h1>ước 1 điều gì đó chó sinh nhật của cậu</h1>
+      
+                <div class="countdown">
+                        
+                        <span class="time" >
+                          <img src="ảnh.jpg" id="cake">
+                            
+                            
+                        </span>
+                       
+         
+                </div>
+      <div class="buttons" style="text-align: center;">
+        <button class="back-btn" onclick="back(4)">quay lại</button>
+      </div>
+    </div>
+
+    <div class="page6c" id="vuive">
+      <h1>các anh da đen cũng có lời chúc</h1>
+      <video style="width: 100%; max-height: 90vh;" controls src="sn Huyền diệu.mp4"></video>
+      <div class="buttons" style="text-align: center;">
+        <button class="back-btn" onclick="back(4)">quay lại</button>
+      </div>
+    </div>
+
+    <div class="page5" id="page5" >
+      <h1>Vậy là muốn chọn quà rồi!!</h1>
+      <h2>Chỉ Huyền Diệu mới được chọn quà. Nhập password</h2>
+      <input type="date" id="page5-qes">
+      <div class="buttons" style="text-align: center;">
+        <button class="back-btn" onclick="back(4)">quay lại</button>
+        <button class="next-btn" onclick="next('6d')">tiếp</button>
+      </div>
+    </div>
+
+    <div class="page6d">
+      <h1>Sinh nhật năm nay bạn muốn nhận quà gì ?</h1>
+      <div class="quas" >
+        <span class="qua" onclick="next(7)"id="qua1">móc khóa</span>
+        <span class="qua"onclick="next(7)"id="qua2">gấu bông </span>
+        <span class="qua"onclick="next(7)"id="qua3">ko chọn gì</span>
+        <span class="qua"onclick="next(7)"id="qua4">chọn tất</span>
+        
+        
+      </div>  
+      <div class="buttons" style="text-align: center;">
+        <button class="back-btn" onclick="back(4)">quay lại</button>
+      </div>
+    </div>
+
+    
+
+    <div class="page7">
+      <h1>xin chúc mừng người đặc biệt hôm nay </h1>
+      <p class="content">bạn đã chọn tất</p>
+      <img src="ảnh chiếc.jpg" alt="ko tim thay anh">
+      <div class="buttons" style="text-align: center;">
+        <button class="back-btn" onclick="back(4)">quay lại</button>
+      </div>
+    </div>
+    
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <!--<script src="page1.js"></script>-->
+  <script>
+  
+  const BIN_ID = "68711c223497bd4cad9af280";
+ 
+
+const list=[{
+  content:"bạn đã chọn móc khóa",
+  srcImg:""
+},
+{
+  content:"bạn đã chọn gấu bông",
+  srcImg:""
+},
+{
+  content:"bạn đã không chọn gì",
+  srcImg:""
+},
+{
+  content:"bạn đã chọn tất",
+  srcImg:"ảnh chiếc.jpg"
+}]
+
+function getData(){
+  fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+  method: "GET",
+  headers: {
+    
+    "X-Access-Key":"$2a$10$jcTFWdrVTyEvPPqaOa/j9OURzv/IbGEHkQ/RWrfqvPah7kTjEWyX.",
+  },
+  
+})
+.then(res => res.json())
+.then(data => {
+  if(data.record.quadachon==""){return}
+  else{
+    document.querySelector(".page6d").innerHTML=`<h1>món quà cho người đặc biệt hôm nay </h1>
+      <p class="content">${list[data.record.quadachon-1].content}</p>
+      <img src="${list[data.record.quadachon-1].srcImg}" alt="ko tim thay anh">
+      <div class="buttons" style="text-align: center;">
+        <button class="back-btn" onclick="back(4)">quay lại</button>
+      </div>`
+  }
+  
+})
+.catch(err => {
+  console.error("Có lỗi:", err);
+});
+
+}
+getData()
+
+
+    function doaMa(){
+      const anhMa=document.getElementById("anh-ma")
+      anhMa.src="gif dọa ma.gif"
+    }
+
+
+    function next(thisNum){
+      if(thisNum=='6a'){
+        const currentPage=document.querySelector(`.page4`)
+        const nextPage=document.querySelector(`.page6a`)
+        currentPage.style.display="none"
+        nextPage.style.display="block"
+        return
+      }
+      else if(thisNum=='6b'){
+        const currentPage=document.querySelector(`.page4`)
+        const nextPage=document.querySelector(`.page6b`)
+        currentPage.style.display="none"
+        nextPage.style.display="block"
+        return
+      }
+      else if(thisNum=='6c'){
+        const currentPage=document.querySelector(`.page4`) 
+        const nextPage=document.querySelector(`.page6c`)
+        currentPage.style.display="none"
+        nextPage.style.display="block"
+        return
+      }
+      else if(thisNum==5){
+        const currentPage=document.querySelector(`.page4`)
+        const nextPage=document.querySelector(`.page5`)
+        
+        currentPage.style.display="none"
+        nextPage.style.display="block"
+        return
+      }
+     
+      else if(thisNum=='6d'){
+        if(document.getElementById("page5-qes").value !== "2009-07-12"){
+          alert("xin lỗi nha bạn lm sai rồi")
+          return
+        }   
+        const currentPage=document.querySelector(`.page5`)
+        const nextPage=document.querySelector(`.page6d`)
+        currentPage.style.display="none"
+        nextPage.style.display="block"
+        return
+      }
+      else if(thisNum==7){
+        const currentPage=document.querySelector(`.page6d`)
+        const nextPage=document.querySelector(`.page7`)
+        currentPage.style.display="none"
+        nextPage.style.display="block"
+        return
+      }
+      else if(thisNum==2){
+        if(document.getElementById("page2-qes").value !== "16"){
+          alert("bạn có phải Diệu ko??? ")
+          return
+        }
+      }
+
+      const currentPage=document.querySelector(`.page${thisNum}`)
+      const nextPage=document.querySelector(`.page${thisNum + 1}`)
+      currentPage.style.display="none"
+      nextPage.style.display="block"
+    }
+
+    function back(thisNum){
+      document.querySelector("video").pause();
+      if(thisNum==4){
+        const page5=document.querySelector(`.page5`)
+        const page6a=document.querySelector(`.page6a`)
+        const page6b=document.querySelector(`.page6b`)
+        const page6c=document.querySelector(`.page6c`)
+        const page6d=document.querySelector(`.page6d`)
+        const page7=document.querySelector(`.page7`)
+        page5.style.display="none"
+        page6a.style.display="none"
+        page6b.style.display="none"
+        page6c.style.display="none"
+        page6d.style.display="none"
+        page7.style.display="none"
+        document.querySelector(".page4").style.display="block"
+        return
+      }
+      const currentPage=document.querySelector(`.page${thisNum}`)
+      const backPage=document.querySelector(`.page${thisNum - 1}`)
+      currentPage.style.display="none"
+      backPage.style.display="block"
+    }
+
+function postData(num){
+        const newData = {
+    quadachon:num
+};
+    
+          fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              "X-Access-Key": "$2a$10$jcTFWdrVTyEvPPqaOa/j9OURzv/IbGEHkQ/RWrfqvPah7kTjEWyX.",
+              
+            },
+          body: JSON.stringify(newData)
+          })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+
+          })
+          .catch(err => {
+            alert( err);
+          });
+
+        }
+     
+
+
+    const qua1=document.getElementById('qua1')
+    const qua2=document.getElementById('qua2')
+    const qua3=document.getElementById('qua3')
+    const qua4=document.getElementById('qua4')
+    qua1.addEventListener('click',()=>{
+      document.querySelector(".page7").innerHTML=`<h1>xin chúc người đặc biệt hôm nay </h1>
+      <p class="content">bạn đã chọn móc khóa</p>
+      
+      <div class="buttons" style="text-align: center;">
+        <button class="back-btn" onclick="back(4)">quay lại</button>
+      </div>`
+      postData(1)
+    })
+    qua2.addEventListener('click',()=>{
+      document.querySelector(".page7").innerHTML=`<h1>xin chúc mừng người đặc biệt hôm nay </h1>
+      <p class="content">bạn đã chọn gấu bông</p>
+      
+      <div class="buttons" style="text-align: center;">
+        <button class="back-btn" onclick="back(4)">quay lại</button>
+      </div>`
+      postData(2)
+    })
+    qua3.addEventListener('click',()=>{
+      document.querySelector(".page7").innerHTML=`<h1>xin chúc mừng người đặc biệt hôm nay </h1>
+      <p class="content">ủa lạ vậy ko chọn gì .mà thôi tôn trọng lựa trọn của cậu</p>
+      
+      <div class="buttons" style="text-align: center;">
+        <button class="back-btn" onclick="back(4)">quay lại</button>
+      </div>`
+      postData(3)
+    })
+    qua4.addEventListener('click',()=>{
+      postData(4)
+      getData()
+
+    })
+
+
+    
+
+
+    
+    
+  </script>
+</body>
+</html>
