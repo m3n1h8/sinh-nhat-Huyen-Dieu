@@ -38,13 +38,9 @@
       page6b_h1.innerHTML = "Cầu mong cho điều ước đó thành hiện thực!";
     }
     // Music Control
-    const audio = document.querySelector("audio");
+    const audio= document.querySelector("audio");
     const iconplayMusic = document.getElementById("iconplay-music");
-
-    if (audio.paused) {
-      audio.play();
-      iconplayMusic.innerHTML = `<ion-icon name="pause-circle-outline" class="quay"></ion-icon>`;
-    }
+    const start_btn= document.querySelector(".start");
 
     iconplayMusic.addEventListener("click", () => {
       if (audio.paused) {
@@ -55,6 +51,9 @@
         iconplayMusic.innerHTML = `<ion-icon name="play-circle-outline"></ion-icon>`;
       }
     });
+    start_btn.addEventListener("click", () => {
+      audio.play();
+      iconplayMusic.innerHTML = `<ion-icon name="pause-circle-outline" class="quay"></ion-icon>`;})
 
 
 
