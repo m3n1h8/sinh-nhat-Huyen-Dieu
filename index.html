@@ -6,7 +6,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
-  <title>CHÚC MỪNG SINH NHẬT HUYỀN DIỆU</title>
+  <title id="title">Chúc Mừng Sinh Nhật Bạn</title>
 </head>
 <body>
   <div class="container">
@@ -21,7 +21,7 @@
     </nav>
 
     <div class="page1" data-aos="fade-up">
-      <h1>Chúc Mừng Sinh Nhật Huyền Diệu</h1>
+      <h1 id="h1-page1">Chúc MỪNG SINH NHẬT BẠN</h1>
       <p class="content">Khám phá món quà đặc biệt dành cho bạn!</p>
       <div class="buttons">
         <button class="start" onclick="next(1,2)" aria-label="Bắt đầu trải nghiệm sinh nhật">Bắt đầu</button>
@@ -30,10 +30,10 @@
     </div>
 
     <div class="page2" data-aos="fade-up">
-      <h1>Xác nhận bạn là Huyền Diệu</h1>
+      <h1 id="h1-page2">Xác nhận hôm nay là sinh nhật bạn</h1>
       <p class="content">Năm nay bạn bao nhiêu tuổi?</p>
       <input type="number" id="page2-qes" placeholder="Nhập tuổi của bạn" aria-label="Nhập tuổi của bạn">
-      <p id="page2-error" class="error-message">Bạn có phải Huyền Diệu không? Vui lòng nhập đúng tuổi!</p>
+      <p id="page2-error" class="error-message">có phải bạn không? Vui lòng nhập đúng tuổi!</p>
       <div class="buttons">
         <button class="back-btn" onclick="back(2,1)" aria-label="Quay lại">Quay lại</button>
         <button class="next-btn" onclick="next(2,3)" aria-label="Tiếp tục">Tiếp</button>
@@ -41,7 +41,7 @@
     </div>
 
     <div class="page3" data-aos="fade-up">
-      <h1>Chúc mừng, Huyền Diệu!</h1>
+      <h1 id="h1-page3">Chúc mừng</h1>
       <p class="content">Chúc bạn một ngày sinh nhật thật ý nghĩa và tràn ngập niềm vui!</p>
       <div class="buttons">
         <button class="back-btn" onclick="back(3,2)" aria-label="Quay lại">Quay lại</button>
@@ -93,7 +93,7 @@
 
     <div class="page5" data-aos="fade-up">
       <h1>Chọn quà nào!</h1>
-      <p class="content">Chỉ Huyền Diệu mới được chọn quà. Nhập ngày sinh của bạn!</p>
+      <p class="content" id="content-page5">Chỉ bạn mới được chọn quà. Nhập ngày sinh của bạn!</p>
       <input type="date" id="page5-qes" aria-label="Nhập ngày sinh của bạn">
       <p id="page5-error" class="error-message">Ngày sinh không đúng! Vui lòng thử lại.</p>
       <div class="buttons">

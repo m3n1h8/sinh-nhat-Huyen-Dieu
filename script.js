@@ -1,5 +1,63 @@
 
 
+const params = new URLSearchParams(window.location.search)
+  const id=params.get("id")
+
+// const id = "68711c223497bd4cad9af280";
+    const list = [
+      { content: "Bạn đã chọn móc khóa", srcImg: "" },
+      { content: "Bạn đã chọn gấu bông", srcImg: "" },
+      { content: "Bạn đã không chọn gì", srcImg: "" },
+      { content: "Bạn đã chọn tất", srcImg: "ảnh chiếc.jpg" }
+    ];
+    let age=17;
+    let birthday = "2009-07-14"; 
+    let real= false;
+
+    function getData() {
+        console.log("đang getdata")
+      fetch(`https://api.jsonbin.io/v3/b/${id}/latest`, {
+        method: "GET",
+        headers: { "X-Access-Key": "$2a$10$jcTFWdrVTyEvPPqaOa/j9OURzv/IbGEHkQ/RWrfqvPah7kTjEWyX." }
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log("Dữ liệu đã được lấy:", data);
+
+        const thay= ['title','h1-page1', 'h1-page2', 'page2-error', 'h1-page3', 'content-page5'];
+        thay.forEach((id,index) => {
+          document.getElementById(id).innerHTML=data.record.listcontent[index]||document.getElementById(id).innerHTML;
+        ;})
+
+        age = data.record.age||age;
+        console.log("Tuổi của bạn là:", age);
+
+        birthday = data.record.birthday||birthday;
+        console.log("Ngày sinh của bạn là:", birthday);
+
+        if(data.record.real){
+          real= true;
+          document.querySelector(".page6d").innerHTML = `
+          <h1>Món quà cho người đặc biệt!</h1>
+          <p class="content">${list[data.record.quadachon - 1].content}</p>
+          <div class="buttons">
+            <button class="back-btn" onclick="back('6d',4)" aria-label="Quay lại">Quay lại</button>
+          </div>`;
+        }
+
+
+        if (!data.record.quadachon || data.record.quadachon === "") {
+          console.log("Chưa chọn quà");
+          return;
+        }
+        
+        
+      })
+      .catch(err => console.error("Có lỗi:", err));
+    }
+    getData();
+
+
 
     AOS.init({ duration: 800, once: true });
 
@@ -13,18 +71,7 @@
       });
     }
 
-    // Fireworks Effect
-    // function launchFireworks() {
-    //   confetti({
-    //     particleCount: 200,
-    //     spread: 90,
-    //     startVelocity: 45,
-    //     decay: 0.9,
-    //     gravity: 0.5,
-    //     ticks: 200,
-    //     origin: { y: 0 }
-    //   });
-   // }
+   
     // Cake and Fire Interaction
      const time = document.querySelector(".time");
      const fire = document.getElementById("fire");
@@ -62,41 +109,15 @@
 
 
     // API Data
-    const BIN_ID = "68711c223497bd4cad9af280";
-    const list = [
-      { content: "Bạn đã chọn móc khóa", srcImg: "" },
-      { content: "Bạn đã chọn gấu bông", srcImg: "" },
-      { content: "Bạn đã không chọn gì", srcImg: "" },
-      { content: "Bạn đã chọn tất", srcImg: "ảnh chiếc.jpg" }
-    ];
 
-    function getData() {
-        console.log("đang getdata")
-      fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
-        method: "GET",
-        headers: { "X-Access-Key": "$2a$10$jcTFWdrVTyEvPPqaOa/j9OURzv/IbGEHkQ/RWrfqvPah7kTjEWyX." }
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (!data.record.quadachon || data.record.quadachon === "") {
-          console.log("Chưa chọn quà");
-          return;
-        }
-        console.log("Đã có quà được chọn trước đó");
-        document.querySelector(".page6d").innerHTML = `
-          <h1>Món quà cho người đặc biệt!</h1>
-          <p class="content">${list[data.record.quadachon - 1].content}</p>
-          <div class="buttons">
-            <button class="back-btn" onclick="back('6d',4)" aria-label="Quay lại">Quay lại</button>
-          </div>`;
-      })
-      .catch(err => console.error("Có lỗi:", err));
-    }
-   // getData();
+    
+    
+
+    
 
     function postData(num) {
       const newData = { quadachon: num };
-      fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+      fetch(`https://api.jsonbin.io/v3/b/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -116,10 +137,9 @@
 
     // Navigation
     function next(thisNum,nextNum) {
-
         const currentPage = document.querySelector(`.page${thisNum}`);
         const nextPage = document.querySelector(`.page${nextNum}`);
-        if( thisNum === 2 && document.getElementById("page2-qes").value != 16) {
+        if( thisNum === 2 && age!="none"  && document.getElementById("page2-qes").value != age) {
           document.getElementById("page2-error").style.display = "block";
           return;
         } 
@@ -127,7 +147,7 @@
           document.getElementById("page2-error").style.display = "none";
           
         }
-         if( thisNum === 5 && document.getElementById("page5-qes").value != "2009-07-12") {
+         if( thisNum === 5 && birthday!='none' && document.getElementById("page5-qes").value != birthday) {
           document.getElementById("page5-error").style.display = "block";
           return;
         }else {
@@ -144,7 +164,7 @@
       }
 
     function back(thisNum,backNum) { 
-        if( thisNum == 7 ){
+        if( thisNum == 7 && real===true){
             getData()
         }
         if(backNum==1){
@@ -182,7 +202,17 @@
           <div class="buttons">
             <button class="back-btn" onclick="back(7,4)" aria-label="Quay lại">Quay lại</button>
           </div>`;
-        postData(index + 1);
+
+          document.querySelector(".page6d").innerHTML=`
+          <h1>Chúc mừng người đặc biệt!</h1>
+          <p class="content">${list[index].content}</p>
+          ${list[index].srcImg ? `<img src="${list[index].srcImg}" alt="Quà đã chọn" style="width: 100%; border-radius: 8px;" loading="lazy">` : ""}
+          <div class="buttons">
+            <button class="back-btn" onclick="back('6d',4)" aria-label="Quay lại">Quay lại</button>
+          </div>`
+
+          if(real===true){
+        postData(index + 1);}
        // getData();
         launchConfetti(); // Confetti khi chọn quà
         launchFireworks(); // Pháo hoa khi chọn quà
