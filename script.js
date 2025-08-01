@@ -1,4 +1,6 @@
-
+const gifma= new Image()
+    gifma.src="gif dọa ma.gif"
+    gifma.onload=()=>console.log("dã load xong gif ma")
 
 const params = new URLSearchParams(window.location.search)
   const id=params.get("id")
@@ -14,8 +16,10 @@ const params = new URLSearchParams(window.location.search)
     let birthday = "2009-07-14"; 
     let real= false;
 
+    let putData = 0
+
     function getData() {
-        console.log("đang getdata")
+        console.log("đang getdata lần đầu")
       fetch(`https://api.jsonbin.io/v3/b/${id}/latest`, {
         method: "GET",
         headers: { "X-Access-Key": "$2a$10$jcTFWdrVTyEvPPqaOa/j9OURzv/IbGEHkQ/RWrfqvPah7kTjEWyX." }
@@ -23,6 +27,9 @@ const params = new URLSearchParams(window.location.search)
       .then(res => res.json())
       .then(data => {
         console.log("Dữ liệu đã được lấy:", data);
+        putData= data.record
+        console.log(putData)
+
 
         const thay= ['title','h1-page1', 'h1-page2', 'page2-error', 'h1-page3', 'content-page5'];
         thay.forEach((id,index) => {
@@ -35,23 +42,20 @@ const params = new URLSearchParams(window.location.search)
         birthday = data.record.birthday||birthday;
         console.log("Ngày sinh của bạn là:", birthday);
 
-        if(data.record.real){
+        if(data.record.real==true){
+          console.log("đây là khách hàng true")
           real= true;
+          if (data.record.quadachon == "") {
+          console.log("Chưa chọn quà");
+          return;
+        }
           document.querySelector(".page6d").innerHTML = `
           <h1>Món quà cho người đặc biệt!</h1>
           <p class="content">${list[data.record.quadachon - 1].content}</p>
           <div class="buttons">
             <button class="back-btn" onclick="back('6d',4)" aria-label="Quay lại">Quay lại</button>
           </div>`;
-        }
-
-
-        if (!data.record.quadachon || data.record.quadachon === "") {
-          console.log("Chưa chọn quà");
-          return;
-        }
-        
-        
+        }  
       })
       .catch(err => console.error("Có lỗi:", err));
     }
@@ -102,37 +106,29 @@ const params = new URLSearchParams(window.location.search)
       audio.play();
       iconplayMusic.innerHTML = `<ion-icon name="pause-circle-outline" class="quay"></ion-icon>`;})
 
-
-
-
-
-
-
     // API Data
 
-    
-    
 
-    
-
-    function postData(num) {
-      const newData = { quadachon: num };
+    function  patchData(num) {
+      putData.quadachon=num
+     // const newData = { quadachon: num };
       fetch(`https://api.jsonbin.io/v3/b/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          "X-Access-Key": "$2a$10$jcTFWdrVTyEvPPqaOa/j9OURzv/IbGEHkQ/RWrfqvPah7kTjEWyX."
+          "X-Access-Key": "$2a$10$jcTFWdrVTyEvPPqaOa/j9OURzv/IbGEHkQ/RWrfqvPah7kTjEWyX.",
+
         },
-        body: JSON.stringify(newData)
+        body: JSON.stringify(putData)
       })
       .then(res => res.json())
       .then(data => console.log(data))
       .catch(err => console.error("Có lỗi:", err));
     }
-
+    
     // Surprise Image Effect
     function doaMa() {
-      document.getElementById("anh-ma").src = "gif dọa ma.gif";
+      document.getElementById("anh-ma").src = gifma.src ;
     }
 
     // Navigation
@@ -153,10 +149,6 @@ const params = new URLSearchParams(window.location.search)
         }else {
           document.getElementById("page5-error").style.display = "none";
         }
-       
-
-            
-        
 
         currentPage.style.display = "none";
         nextPage.style.display = "block";
@@ -164,7 +156,7 @@ const params = new URLSearchParams(window.location.search)
       }
 
     function back(thisNum,backNum) { 
-        if( thisNum == 7 && real===true){
+        if( thisNum == 7 && real==true){
             getData()
         }
         if(backNum==1){
@@ -212,9 +204,9 @@ const params = new URLSearchParams(window.location.search)
           </div>`
 
           if(real===true){
-        postData(index + 1);}
-       // getData();
+          patchData(index + 1);}
+       
         launchConfetti(); // Confetti khi chọn quà
-        launchFireworks(); // Pháo hoa khi chọn quà
+        
       });
     });
