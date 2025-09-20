@@ -7,10 +7,10 @@ const params = new URLSearchParams(window.location.search)
 
 // const id = "68711c223497bd4cad9af280";
     const list = [
-      { content: "Bạn đã chọn móc khóa", srcImg: "" },
-      { content: "Bạn đã chọn gấu bông", srcImg: "" },
-      { content: "Bạn đã không chọn gì", srcImg: "" },
-      { content: "Bạn đã chọn tất", srcImg: "ảnh chiếc.jpg" }
+      { content: "Bạn đã chọn gối ru ngủ tự động: cứ nằm xuống là nó hát 'Chúc mừng sinh nhật' suốt đêm không tắt được.", srcImg: "" },
+      { content: "Bạn đã chọn đồng hồ báo thức thông minh: chỉ có mỗi một chế độ: reo lúc... 3 giờ sáng.", srcImg: "" },
+      { content: "Bạn đã chọn thẻ giảm giá 100%: dùng được mọi nơi nhưng chỉ áp dụng vào ngày hôm qua.", srcImg: "" },
+      { content: "Bạn đã chọn nến chống thổi: thổi hoài không tắt, càng thổi sàng sáng hơn.", srcImg: "" }
     ];
     let age=17;
     let birthday = "2009-07-14"; 
@@ -206,7 +206,7 @@ const params = new URLSearchParams(window.location.search)
           if(real===true){
           patchData(index + 1);}
        
-        launchConfetti(); // Confetti khi chọn quà
+        launchConfetti(); // bắn pháo hoa khi chọn quà
         
       });
     });

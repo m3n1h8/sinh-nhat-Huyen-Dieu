@@ -1,6 +1,7 @@
 :root {
       --main-color: #ffe4e6;
       --accent-color: #f43f5e;
+      --accent2-color: #ed5b74;
       --font-color: #2d3748;
       --bg-color: #fff1f2;
       --font-title: 'Pacifico', cursive;
@@ -81,7 +82,7 @@
     }
 
     /* Pages */
-    .page1, .page2, .page3, .page4, .page5, .page6a, .page6b, .page6c, .page6d, .page7 {
+    .page1, .page2, .page3, .page4, .page5, .page6a, .page6b, .page6c, .page6d,.page6e, .page7 {
       width: 90%;
       max-width: 800px;
       background: white;
@@ -100,7 +101,7 @@
       align-items: center;
     }
 
-    .page2, .page3, .page4, .page5, .page6a, .page6b, .page6c, .page6d, .page7 {
+    .page2, .page3, .page4, .page5, .page6a, .page6b, .page6c, .page6d,.page6e, .page7 {
       display: none;
     }
 
@@ -307,7 +308,7 @@
         font-size: 2rem;
       }
 
-      .page1, .page2, .page3, .page4, .page5, .page6a, .page6b, .page6c, .page6d, .page7 {
+      .page1, .page2, .page3, .page4, .page5, .page6a, .page6b, .page6c, .page6d,.page6e, .page7 {
         padding: 1.5rem;
       }
 
@@ -325,4 +326,20 @@
       .journeys, .quas {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       }
+    }
+
+
+    /*6e*/
+    .character{
+      margin: 50px 0;
+      text-align: center;
+       
+      color: var(--accent2-color);
+      border: 2px solid var(--main-color);
+      padding: 20px ;
+      border-radius: 10px;
+    }
+    .character h2{
+      font-family: var(--font-title);
+      margin-bottom: 10px;
     }
